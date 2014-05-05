@@ -12,10 +12,11 @@ header
           li.nav-item
             = link_to t('channels.header.partners'), root_url(anchor: 'partners'), class: 'standard-link'
 
+          = Rails.logger.debug "\n\n###--### #{channel.inspect}\n\n\n"
           = debug channel
-          - if channel.email
-            li.nav-item
-              = mail_to channel.email, t('channels.header.contact'), title: t('channels.header.contact'), class: 'standard-link', target: '_blank'
+          / - if channel.email
+          /   li.nav-item
+          /     = mail_to channel.email, t('channels.header.contact'), title: t('channels.header.contact'), class: 'standard-link', target: '_blank'
           - if current_user
             li.nav-item
               = link_to '#', class: 'user-menu' do
