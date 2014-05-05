@@ -24,7 +24,7 @@ section.line-box
             .channel-followers[title=t('channels.subscribed', count: @profile.channels_subscribers.size)]
               = t('channels.subscribed', count: @profile.channels_subscribers.size)
 
-      if @profile.video_valid?
+      - if @profile.video_valid?
         .large-4.columns.video-thumb
           = image_tag(@profile.video.thumbnail_large, width: '100%')
           span
